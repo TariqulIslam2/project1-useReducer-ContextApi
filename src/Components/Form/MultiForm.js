@@ -30,7 +30,9 @@ const MultiForm = () => {
           }
             case "decrease": {
                
-            return { ...state, quantity: parseInt(state.quantity) - 1 };
+            return state.quantity > 0
+              ? { ...state, quantity: parseInt(state.quantity) - 1 }
+              : { ...state, quantity: parseInt(state.quantity)};
           }
 
           default: {
@@ -190,6 +192,9 @@ const MultiForm = () => {
                   <input
                     type="number"
                     name="quantity"
+                    min="0"
+                    max="10"
+                    step="1"
                     value={state.quantity}
                     onChange={(e) => {
                       dispatch({

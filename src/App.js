@@ -1,10 +1,15 @@
+import { RouterProvider } from 'react-router-dom';
 import './App.css';
-import MultiForm from './Components/Form/MultiForm';
+import ProductProvider from './Components/ProductCartDesign/Context/ProductProvider';
+import { router } from './router';
+
 
 function App() {
   return (
     <div className="App">
-     <MultiForm></MultiForm>
+      <ProductProvider>
+        <RouterProvider router={router}></RouterProvider>
+      </ProductProvider>
     </div>
   );
 }
