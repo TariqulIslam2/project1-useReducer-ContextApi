@@ -9,6 +9,7 @@ const ProductProvider = ({children}) => {
         .then((res) => setData(res.products));
     }, []);
    
+  
     
     const value = {
        data,

@@ -25,7 +25,7 @@ const TopNavbar = () => {
                             <li className="nav-item">
                                 
                   <a className="nav-link active" aria-current="page" href="#">
-                                    <i class="fa-sharp fa-solid fa-cart-plus fs-3 text-white"></i> <sup className='text-white'>{state.cart.length }</sup>
+                                    {/* <i class="fa-sharp fa-solid fa-cart-plus fs-3 text-white"></i> <sup className='text-white'>{state.cart.length }</sup> */}
                   </a>
                 </li>
               </ul>
