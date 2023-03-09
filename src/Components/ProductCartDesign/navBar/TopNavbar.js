@@ -22,9 +22,10 @@ const TopNavbar = () => {
                 TechNLogy
               </a>
               <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
-                <li className="nav-item">
+                            <li className="nav-item">
+                                
                   <a className="nav-link active" aria-current="page" href="#">
-                    <i class="fa-sharp fa-solid fa-cart-plus fs-3 text-white"></i>
+                                    <i class="fa-sharp fa-solid fa-cart-plus fs-3 text-white"></i> <sup className='text-white'>{state.cart.length }</sup>
                   </a>
                 </li>
               </ul>

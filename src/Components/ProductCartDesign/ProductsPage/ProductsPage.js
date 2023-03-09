@@ -1,11 +1,14 @@
 
 import { RatingStar } from "rating-star";
-import React from "react";
+import React, { useReducer } from "react";
 import { useProducts } from "../Context/ProductProvider";
 import TopNavbar from "../navBar/TopNavbar";
+import { actionTypes } from "../State/ProductState/actionTypes";
+import { initialState, reducer } from "../State/ProductState/productReducer";
 const ProductsPage = () => {
   const { data } = useProducts() || {};
-
+    const [state, dispatch] = useReducer(reducer, initialState);
+    console.log(state);
   return (
     <>
       <style>
@@ -66,7 +69,7 @@ const ProductsPage = () => {
 
                   <div>
                     <div className="text-danger ">
-                      <button className="border-0 w-100 hovereffect py-2 fw-bold">
+                      <button className="border-0 w-100 hovereffect py-2 fw-bold" onClick={()=>{dispatch({type:actionTypes.ADDTOCART,payload:item})}}>
                         {" "}
                         <i class="fa-sharp fa-solid fa-cart-plus fs-6 me-2"></i>
                         Add To cart
