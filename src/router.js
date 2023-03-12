@@ -1,5 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 import MultiForm from "./Components/Form/MultiForm";
+import CartPage from "./Components/ProductCartDesign/CartPage/CartPage";
 import ProductsPage from "./Components/ProductCartDesign/ProductsPage/ProductsPage";
 import SimpleCalculation from "./Components/SimpleCalculation/SimpleCalculation";
 
@@ -23,5 +24,9 @@ export const router = createBrowserRouter([
   {
     path: "/products",
     element: <ProductsPage></ProductsPage>,
+  },
+  {
+    path: "/cart",
+    element: <CartPage></CartPage>,
   },
 ]);
