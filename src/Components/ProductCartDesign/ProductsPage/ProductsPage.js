@@ -1,13 +1,13 @@
 
 import { RatingStar } from "rating-star";
-import React, { useReducer } from "react";
+import React from "react";
 import { useProducts } from "../Context/ProductProvider";
 import TopNavbar from "../navBar/TopNavbar";
 import { actionTypes } from "../State/ProductState/actionTypes";
-import { initialState, reducer } from "../State/ProductState/productReducer";
+
 const ProductsPage = () => {
-  const { data } = useProducts() || {};
-    const [state, dispatch] = useReducer(reducer, initialState);
+  const { state,dispatch } = useProducts() || {};
+   
     console.log(state);
   return (
     <>
@@ -17,10 +17,10 @@ const ProductsPage = () => {
         }
       </style>
       <TopNavbar></TopNavbar>
-      <div className="container my-5">
+      <div className="container my-5 pt-5">
         <div className="row row-cols-1 row-cols-md-3 g-4">
-          {data?.length &&
-            data?.map((item) => (
+          {state.data?.length &&
+            state.data?.map((item) => (
               <div className="col">
                 <div className="card h-100">
                   <img
