@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useEffect, useReducer, useState } from 'react';
+import React, { createContext, useContext, useEffect, useReducer } from 'react';
 import { actionTypes } from '../State/ProductState/actionTypes';
 import { initialState, reducer } from '../State/ProductState/productReducer';
 
@@ -9,7 +9,23 @@ const ProductProvider = ({children}) => {
     useEffect(() => {
       fetch("https://dummyjson.com/products")
         .then((res) => res.json())
-        .then((res) => dispatch({type: actionTypes.LOADDATA , payload:res.products}));
+        .then((res) => {
+          if (res) {
+               res.products.forEach(function (product) {
+                product.quantity = 1;
+                product.totalPrice = product.price;
+              });
+          
+          dispatch({ type: actionTypes.LOADDATA, payload: res.products });
+          
+          }
+     
+          
+          // console.log(data);
+          
+          
+          
+        });
     }, []);
      
     
